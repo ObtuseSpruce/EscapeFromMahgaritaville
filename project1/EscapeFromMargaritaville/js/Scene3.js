@@ -10,12 +10,14 @@
 	create() {
         var title = this.add.image(400,200,'title');
 
-        var text = this.add.text(300,500, 'restart the game!');
-        text.setInteractive({ useHandCursor: true });
-        text.on('pointerdown',  function () {
+        var restarttext = this.add.text(300,500, 'restart the game!');
+        restarttext.setInteractive({ useHandCursor: true });
+        restarttext.on('pointerdown',  function () {
             this.scene.switch('Scene2');
           }, this);
-        }
+        var scoretext = this.add.text(300, 400, (Math.floor((timernum * .02) * 100) / 100));
+        timernum = 0
+}
 
     update(){
     }

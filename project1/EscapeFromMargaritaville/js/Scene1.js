@@ -20,6 +20,7 @@ create() {
         var camera = this.cameras.main.setViewport(100,100, 700, 600)
         camera.setBounds(0, 0, 2560, 2048);
         this.physics.world.setBounds(0, 0, 2560, 2048);
+
         
 
         //generates player movement key event listners
@@ -52,10 +53,19 @@ create() {
             this.scene.switch('Scene3');
           }, this);
         this.physics.add.overlap(player, finishline)
+        
+        t = this.add.text(200, 500, { font: "32px Arial", fill: "#ffffff", align: "center" });
+        t.setScrollFactor(0);
+        
 
     }
     
  update () {
+
+        // t.setText('time elapsed ' + timerInt.getProgress().toString().substr(0, 4));
+        t.setText('time elapsed ' + (Math.floor((timernum * .02) * 100) / 100));
+
+
        //player movement
         if (cursors.up.isDown)
     {

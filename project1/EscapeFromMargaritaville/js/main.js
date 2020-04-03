@@ -24,10 +24,12 @@ var timerInt;
 var timer;
 var cursors;
 var timernum = 0
+var score = 0
+var t;
 
 function onEvent () {
     timernum++
-    console.log(timernum * .02)
+    console.log(score)
 }
 
 let game = new Phaser.Game(config);
