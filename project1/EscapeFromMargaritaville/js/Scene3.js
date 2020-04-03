@@ -9,8 +9,6 @@
 	}
 	create() {
 
-        // this.registry.destroy();
-        // this.events.off();
         var title = this.add.image(400,200,'title');
 
         var restarttext = this.add.text(300,500, 'restart the game!');
@@ -18,21 +16,17 @@
         restarttext.on('pointerdown',  function () {
             this.scene.switch('Scene2');
           }, this);
-          console.log(score)
-          scoretext = this.add.text(300, 400, " ");
-          
+          scoreName = this.add.text(300, 400, " ");
+          scoretext = this.add.text(300, 425, " ")
+          currentHighscore = this.add.text(300, 450, " ")
 
-          // this.scene.restart();
-
-        // timernum = 0
-}
-
-    update(){
-      score = (Math.floor((timernum * .02) * 100) / 100)
-      scoretext.setText(score)
-      // timernum = 0;
-      // score = 0
-      console.log(score)
+        }
+        
+  update(){
+      scoreName.setText("Name: " + name)
+      scoretext.setText("Score: " + score + " secs")
+      currentHighscore.setText( "current highscore: " + LS_SCORE)
+      // console.log("highscore name: ", name,  "/n your score", score)
     }
 }
 

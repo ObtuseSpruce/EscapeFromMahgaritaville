@@ -51,6 +51,7 @@ create() {
         this.physics.world.on('overlap', function () {
             this.scene.restart()
             this.scene.switch('Scene3');
+            scoreUpdate()
           }, this);
         this.physics.add.overlap(player, finishline)
         

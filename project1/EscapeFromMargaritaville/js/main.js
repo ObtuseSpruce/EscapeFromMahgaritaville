@@ -21,12 +21,38 @@ var wall;
 var racetrack;
 var finishline;
 var timerInt;
-var timer;
 var cursors;
 var timernum = 0;
 var score;
 var t;
+var scoreName;
 var scoretext;
+var LS_NAMES;
+var LS_SCORE = 0;
+var name;
+var currentHighscore;
+
+function compare () {
+    if (LS_SCORE === 0) {
+        localStorage.setItem('key', JSON.stringify(score));
+        LS_SCORE = JSON.parse(localStorage.getItem('key'));
+    }
+    if(score <= LS_SCORE){
+        localStorage.setItem('key', JSON.stringify(score));
+        LS_SCORE = JSON.parse(localStorage.getItem('key'));
+    }
+}
+function scoreUpdate () {
+    score = (Math.floor((timernum * .02) * 100) / 100)
+    compare();
+    name = prompt('what is your name!')
+}
+
+function setHighscore () {
+    localStorage.setItem('key', JSON.stringify(score));
+    LS_SCORE = JSON.parse(localStorage.getItem('key'));
+    console.log("localstorage: ", LS_SCORE);
+}
 
 function onEvent () {
     timernum++
