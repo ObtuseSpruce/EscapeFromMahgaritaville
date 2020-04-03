@@ -14,11 +14,13 @@
         text.setInteractive({ useHandCursor: true });
         text.on('pointerdown',  function () {
             this.scene.switch('Scene1');
-            timernum = 0;
           }, this);
+        console.log(score)
         }
        
     update(){
+          timernum = 0;
+          score = 0;
     }
 }
 

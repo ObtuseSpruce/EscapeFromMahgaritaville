@@ -23,8 +23,10 @@ var finishline;
 var timerInt;
 var timer;
 var cursors;
-var timernum = 0
+var timernum = 0;
+var score;
 var t;
+var scoretext;
 
 function onEvent () {
     timernum++
